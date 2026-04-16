@@ -24,10 +24,12 @@ class Workout {
       "November",
       "December",
     ];
+
     this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${
       monthNames[this.date.getMonth()]
     } ${this.date.getDate()}`;
   }
+
   click() {
     this.clicks++;
   }
@@ -42,6 +44,7 @@ class Running extends Workout {
     this.calcPace();
     this._setDescription();
   }
+
   calcPace() {
     this.pace = this.duration / this.distance;
     return this.pace;
@@ -192,6 +195,7 @@ class App {
       shadowSize: [68, 95],
       shadowAnchor: [22, 94],
     });
+
     L.marker(workout.coords, {
       opacity: 1,
       riseOnHover: true,
